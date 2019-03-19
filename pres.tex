@@ -107,46 +107,46 @@
     text=black!0,
 ]
 
-\begin{frame}
-  \begin{center}
-    \begin{tikzpicture}
-      \draw[dashed, black!30, very thick] (0,10) -- (0,0);
+% \begin{frame}
+%   \begin{center}
+%     \begin{tikzpicture}
+%       \draw[dashed, black!30, very thick] (0,10) -- (0,0);
 
-      \node[file] (js) at (1,8) {JS};
-      \node[src, anchor=south] (ts) at ([yshift=2mm] js.north) {\scriptsize TS};
-      \node[file, anchor=west] (css) at ([xshift=2mm] js.east) {CSS};
-      \node[src, anchor=south] (scss) at ([yshift=2mm] css.north) {\scriptsize SCSS};
-      \node[file, anchor=west] (pics) at ([xshift=2mm] css.east) {Images};
-      \node[file, anchor=west] (fonts) at ([xshift=2mm] pics.east) {Fonts};
-      \node[file, anchor=west] (html) at ([xshift=2mm] fonts.east) {djHTML};
-      \draw[thick] ([yshift=-5mm] js.west) -- ([yshift=-5mm] html.east) node[midway, below] (disk) {Disk};
+%       \node[file] (js) at (1,8) {JS};
+%       \node[src, anchor=south] (ts) at ([yshift=2mm] js.north) {\scriptsize TS};
+%       \node[file, anchor=west] (css) at ([xshift=2mm] js.east) {CSS};
+%       \node[src, anchor=south] (scss) at ([yshift=2mm] css.north) {\scriptsize SCSS};
+%       \node[file, anchor=west] (pics) at ([xshift=2mm] css.east) {Images};
+%       \node[file, anchor=west] (fonts) at ([xshift=2mm] pics.east) {Fonts};
+%       \node[file, anchor=west] (html) at ([xshift=2mm] fonts.east) {djHTML};
+%       \draw[thick] ([yshift=-5mm] js.west) -- ([yshift=-5mm] html.east) node[midway, below] (disk) {Disk};
 
-      \node[comp] (nginx) at ([yshift=-12mm] disk) {Nginx};
-      \node[comp] (django) at ([yshift=-12mm] nginx) {Django};
-      \node[comp] (sql) at ([yshift=-12mm] django) {PostgreSQL};
+%       \node[comp] (nginx) at ([yshift=-12mm] disk) {Nginx};
+%       \node[comp] (django) at ([yshift=-12mm] nginx) {Django};
+%       \node[comp] (sql) at ([yshift=-12mm] django) {PostgreSQL};
 
-      \node[brw] (browser) at ([xshift=-43mm] nginx.west) {};
-      \node[brwc] (bhtml) at ([shift=(90:10mm)] browser) {HTML};
-      \node[brwc] (bcss) at ([shift=(210:10mm)] browser) {CSS};
-      \node[brwc] (bjs) at ([shift=(330:10mm)] browser) {JS};
+%       \node[brw] (browser) at ([xshift=-43mm] nginx.west) {};
+%       \node[brwc] (bhtml) at ([shift=(90:10mm)] browser) {HTML};
+%       \node[brwc] (bcss) at ([shift=(210:10mm)] browser) {CSS};
+%       \node[brwc] (bjs) at ([shift=(330:10mm)] browser) {JS};
 
-      \draw[<->] ([xshift=-1mm] bjs.north) -- ([xshift=2mm] bhtml.south);
-      \draw[<->] ([xshift=1mm] bcss.north) -- ([xshift=-2mm] bhtml.south);
-      \draw[<->] (bcss.east) -- (bjs.west);
-      \draw[->] (ts.south) -- (js.north);
-      \draw[->] (scss.south) -- (css.north);
-      \draw[<->] (disk.south) -- (nginx.north);
-      \draw[<->] (nginx.south) -- (django.north);
-      \draw[<->] (django.south) -- (sql.north);
+%       \draw[<->] ([xshift=-1mm] bjs.north) -- ([xshift=2mm] bhtml.south);
+%       \draw[<->] ([xshift=1mm] bcss.north) -- ([xshift=-2mm] bhtml.south);
+%       \draw[<->] (bcss.east) -- (bjs.west);
+%       \draw[->] (ts.south) -- (js.north);
+%       \draw[->] (scss.south) -- (css.north);
+%       \draw[<->] (disk.south) -- (nginx.north);
+%       \draw[<->] (nginx.south) -- (django.north);
+%       \draw[<->] (django.south) -- (sql.north);
 
-      \draw[<->] (browser.east) -- (nginx.west);
-      \draw (bjs.east) edge[out=0, in=180] ([yshift=-1mm] nginx.west);
-      \draw[<-] (bjs.east) -- ([xshift=0.1mm] bjs.east);
-      \draw[->] ([xshift=-0.1mm, yshift=-1mm] nginx.west) -- ([yshift=-1mm] nginx.west);
-      \draw[<->] (django.east) -| ([xshift=2mm] html.south);
-    \end{tikzpicture}
-  \end{center}
-\end{frame}
+%       \draw[<->] (browser.east) -- (nginx.west);
+%       \draw (bjs.east) edge[out=0, in=180] ([yshift=-1mm] nginx.west);
+%       \draw[<-] (bjs.east) -- ([xshift=0.1mm] bjs.east);
+%       \draw[->] ([xshift=-0.1mm, yshift=-1mm] nginx.west) -- ([yshift=-1mm] nginx.west);
+%       \draw[<->] (django.east) -| ([xshift=2mm] html.south);
+%     \end{tikzpicture}
+%   \end{center}
+% \end{frame}
 
 \begin{frame}
   \frametitle{1: How to communicate over the internet?}
@@ -304,12 +304,12 @@
 
       \node[brw] (browser) at ([xshift=-43mm] nginx.west) {};
       \node[brwc] (bhtml) at ([shift=(90:10mm)] browser) {HTML};
-      \node[brwc, hidden] (bcss) at ([shift=(210:10mm)] browser) {CSS};
-      \node[brwc, hidden] (bjs) at ([shift=(330:10mm)] browser) {JS};
+      % \node[brwc, hidden] (bcss) at ([shift=(210:10mm)] browser) {CSS};
+      % \node[brwc, hidden] (bjs) at ([shift=(330:10mm)] browser) {JS};
 
-      \draw[<->, hidden] ([xshift=-1mm] bjs.north) -- ([xshift=2mm] bhtml.south);
-      \draw[<->, hidden] ([xshift=1mm] bcss.north) -- ([xshift=-2mm] bhtml.south);
-      \draw[<->, hidden] (bcss.east) -- (bjs.west);
+      % \draw[<->, hidden] ([xshift=-1mm] bjs.north) -- ([xshift=2mm] bhtml.south);
+      % \draw[<->, hidden] ([xshift=1mm] bcss.north) -- ([xshift=-2mm] bhtml.south);
+      % \draw[<->, hidden] (bcss.east) -- (bjs.west);
       \draw[->, hidden] (ts.south) -- (js.north);
       \draw[->, hidden] (scss.south) -- (css.north);
       \draw[<->] (disk.south) -- (nginx.north);
@@ -367,12 +367,12 @@
 
       \node[brw] (browser) at ([xshift=-43mm] nginx.west) {};
       \node[brwc] (bhtml) at ([shift=(90:10mm)] browser) {HTML};
-      \node[brwc, hidden] (bcss) at ([shift=(210:10mm)] browser) {CSS};
-      \node[brwc, hidden] (bjs) at ([shift=(330:10mm)] browser) {JS};
+      % \node[brwc, hidden] (bcss) at ([shift=(210:10mm)] browser) {CSS};
+      % \node[brwc, hidden] (bjs) at ([shift=(330:10mm)] browser) {JS};
 
-      \draw[<->, hidden] ([xshift=-1mm] bjs.north) -- ([xshift=2mm] bhtml.south);
-      \draw[<->, hidden] ([xshift=1mm] bcss.north) -- ([xshift=-2mm] bhtml.south);
-      \draw[<->, hidden] (bcss.east) -- (bjs.west);
+      % \draw[<->, hidden] ([xshift=-1mm] bjs.north) -- ([xshift=2mm] bhtml.south);
+      % \draw[<->, hidden] ([xshift=1mm] bcss.north) -- ([xshift=-2mm] bhtml.south);
+      % \draw[<->, hidden] (bcss.east) -- (bjs.west);
       \draw[->, hidden] (ts.south) -- (js.north);
       \draw[->, hidden] (scss.south) -- (css.north);
       \draw[<->] (disk.south) -- (nginx.north);
@@ -423,12 +423,12 @@
 
       \node[brw] (browser) at ([xshift=-43mm] nginx.west) {};
       \node[brwc] (bhtml) at ([shift=(90:10mm)] browser) {HTML};
-      \node[brwc, hidden] (bcss) at ([shift=(210:10mm)] browser) {CSS};
-      \node[brwc, hidden] (bjs) at ([shift=(330:10mm)] browser) {JS};
+      % \node[brwc, hidden] (bcss) at ([shift=(210:10mm)] browser) {CSS};
+      % \node[brwc, hidden] (bjs) at ([shift=(330:10mm)] browser) {JS};
 
-      \draw[<->, hidden] ([xshift=-1mm] bjs.north) -- ([xshift=2mm] bhtml.south);
-      \draw[<->, hidden] ([xshift=1mm] bcss.north) -- ([xshift=-2mm] bhtml.south);
-      \draw[<->, hidden] (bcss.east) -- (bjs.west);
+      % \draw[<->, hidden] ([xshift=-1mm] bjs.north) -- ([xshift=2mm] bhtml.south);
+      % \draw[<->, hidden] ([xshift=1mm] bcss.north) -- ([xshift=-2mm] bhtml.south);
+      % \draw[<->, hidden] (bcss.east) -- (bjs.west);
       \draw[->, hidden] (ts.south) -- (js.north);
       \draw[->, hidden] (scss.south) -- (css.north);
       \draw[<->] (disk.south) -- (nginx.north);
@@ -478,12 +478,12 @@
 
       \node[brw] (browser) at ([xshift=-43mm] nginx.west) {};
       \node[brwc] (bhtml) at ([shift=(90:10mm)] browser) {HTML};
-      \node[brwc, hidden] (bcss) at ([shift=(210:10mm)] browser) {CSS};
-      \node[brwc, hidden] (bjs) at ([shift=(330:10mm)] browser) {JS};
+      % \node[brwc, hidden] (bcss) at ([shift=(210:10mm)] browser) {CSS};
+      % \node[brwc, hidden] (bjs) at ([shift=(330:10mm)] browser) {JS};
 
-      \draw[<->, hidden] ([xshift=-1mm] bjs.north) -- ([xshift=2mm] bhtml.south);
-      \draw[<->, hidden] ([xshift=1mm] bcss.north) -- ([xshift=-2mm] bhtml.south);
-      \draw[<->, hidden] (bcss.east) -- (bjs.west);
+      % \draw[<->, hidden] ([xshift=-1mm] bjs.north) -- ([xshift=2mm] bhtml.south);
+      % \draw[<->, hidden] ([xshift=1mm] bcss.north) -- ([xshift=-2mm] bhtml.south);
+      % \draw[<->, hidden] (bcss.east) -- (bjs.west);
       \draw[->, hidden] (ts.south) -- (js.north);
       \draw[->, hidden] (scss.south) -- (css.north);
       \draw[<->] (disk.south) -- (nginx.north);
@@ -534,11 +534,11 @@
       \node[brw] (browser) at ([xshift=-43mm] nginx.west) {};
       \node[brwc] (bhtml) at ([shift=(90:10mm)] browser) {HTML};
       \node[brwc] (bcss) at ([shift=(210:10mm)] browser) {CSS};
-      \node[brwc, hidden] (bjs) at ([shift=(330:10mm)] browser) {JS};
+      % \node[brwc, hidden] (bjs) at ([shift=(330:10mm)] browser) {JS};
 
-      \draw[<->, hidden] ([xshift=-1mm] bjs.north) -- ([xshift=2mm] bhtml.south);
+      % \draw[<->, hidden] ([xshift=-1mm] bjs.north) -- ([xshift=2mm] bhtml.south);
       \draw[<->] ([xshift=1mm] bcss.north) -- ([xshift=-2mm] bhtml.south);
-      \draw[<->, hidden] (bcss.east) -- (bjs.west);
+      % \draw[<->, hidden] (bcss.east) -- (bjs.west);
       \draw[->, hidden] (ts.south) -- (js.north);
       \draw[->, hidden] (scss.south) -- (css.north);
       \draw[<->] (disk.south) -- (nginx.north);
@@ -774,6 +774,32 @@
       \draw[<->] (django.east) -| ([xshift=2mm] html.south);
     \end{tikzpicture}
   \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Everything in concert}
+
+  \begin{itemize}
+  \item A typical website feature requires changes to \emph{most} of
+    these components in a synchronized manner.
+  \item JS, CSS, djHTML, Django and PostgreSQL layers change almost
+    all the time.
+  \item Errors in CSS and JS are especially difficult to track down,
+    because most browsers hide them.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Containerization}
+
+  \begin{itemize}
+  \item Nginx, Django and PostgreSQL (and the optimization backend)
+    all run in Docker \emph{containers}.
+  \item Containers provide a fixed and reproducible software
+    environment where components can only affect their own designated
+    ``living space'', interacting only with the other components in
+    limited, predefined ways.
+  \end{itemize}
 \end{frame}
 
 \end{document}
